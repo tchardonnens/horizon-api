@@ -6,6 +6,6 @@ services:
     volumes:
       - .:/code
     ports:
-      - "8001:8001"
+      - "8080:8080"
     environment:
       MISTRAL_API_KEY: ${MISTRAL_API_KEY}

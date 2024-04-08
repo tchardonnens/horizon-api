@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   fastapi:
     build: .
@@ -6,9 +6,10 @@ services:
     volumes:
       - .:/code
     ports:
-      - "8001:8001" 
+      - "8001:8001"
     environment:
       PINECONE_API_KEY: ${PINECONE_API_KEY}
       PINECONE_INDEX_NAME: ${PINECONE_INDEX_NAME}
       PINECONE_INDEX_HOST: ${PINECONE_INDEX_HOST}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY}

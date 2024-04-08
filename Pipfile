@@ -10,6 +10,11 @@ uvicorn = "*"
 python-multipart = "*"
 pdf2image = "*"
 pytesseract = "*"
+llama-index-vector-stores-chroma = "*"
+llama-index-llms-mistralai = "*"
+llama-index-embeddings-mistralai = "*"
+chromadb = "*"
+pydantic = "*"
 
 [dev-packages]
 

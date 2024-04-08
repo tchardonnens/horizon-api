@@ -6,7 +6,10 @@ name = "pypi"
 [packages]
 fastapi = "*"
 openai = "*"
-uvicorn = {extras = ["standard"], version = "*"}
+uvicorn = "*"
+python-multipart = "*"
+pdf2image = "*"
+pytesseract = "*"
 
 [dev-packages]
 

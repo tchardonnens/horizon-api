@@ -37,17 +37,17 @@ app.add_middleware(
 async def upload_pdf(file: UploadFile = File(...)):
     if file.content_type != 'application/pdf':
         raise HTTPException(status_code=400, detail="Invalid file type. Please upload a PDF file.")
-    
+
     try:
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_pdf:
             temp_pdf.write(await file.read())
             temp_pdf_path = temp_pdf.name
             print(temp_pdf_path)
-        
+
         images = convert_from_path(temp_pdf_path)
-        
+
         ocr_results = [pytesseract.image_to_string(image) for image in images]
-        
+
         combined_text = "\n".join(ocr_results)
         xml_generation_response = await generate_xml(combined_text)
         return {"text": combined_text, "xml": xml_generation_response}
